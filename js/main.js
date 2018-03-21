@@ -5,11 +5,11 @@ function validation(){
 	if (checkcomname(comname) && checkfdyear(fdyear) && checkfdname(fdname)) {
 //		var requestURL = 'https://github.com/fengwfrank/api/blob/master/companies.json';
 //		getJSON(requestURL,comname,fdyear,fdname);
-       alert("Cool");
+	alert("Cool");
 	}
 	else 
 		//return false;
-	    alert("oops");
+	alert("oops");
 
 }
 
