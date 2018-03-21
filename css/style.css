@@ -1,0 +1,36 @@
+body {
+	/*background: "../images/background.png";*/
+	background-size: cover; 
+	background-repeat: no-repeat;
+}
+
+.search_box {
+	width: 800px;
+	padding: 50px;
+	background-color: #000000;
+	opacity: 0.2;
+	margin: 0 auto;
+}
+
+.block {
+	width: 400px;
+    display: block;
+    margin:0 auto;
+}
+
+label {
+	color: #ffffff;
+	display: inline-block;
+    width: 150px;
+	text-align: right;
+}
+
+.submit_box {
+	position: relative;
+	top: +30px;
+}
+
+
+
+
+/* li(list-style-image:url(../images/loge_google.png)) */

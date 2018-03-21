@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset='utf-8'> 
+		<title>
+			Search Company
+		</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script language="JavaScript" src ="js/main.js" ></script>
+	</head>
+
+	<body background="images/background.png">
+		<h1 align="center">Sampel Project</h1>
+		<form class="search_box" method="post">
+				<div class="block">
+					<label for="Company_name">Company Name: </label>
+					<input type="text" id="Company_name" name="Company_name">
+					<div id="comnameErr"></div><br>
+				</div>
+
+				<div class="block">
+					<label for="Founded_year">Founded Year: </label>
+					<input type="text" id="Founded_year" name="Founded_year">
+					<div id="fdyearErr"></div><br>
+
+				</div>
+			
+				<div class="block">
+					<label for="Founder_name" >Founder Name: </label>
+					<input type="text" id="Founder_name" name="Founder_name">
+					<div id="fdnameErr"></div><br>
+				</div>
+
+		</form>
+
+		<p class="submit_box" align="center" >
+				<input id="submit" type="submit" value="Search" onclick="validation();">
+				<input id="clear" type="reset" value="Clear" onclick="clearup();">
+		</p>
+
+	    <div>
+	    	<table></table>
+	    </div>
+
+
+
+	</body>
+</html>
