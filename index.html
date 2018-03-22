@@ -6,12 +6,11 @@
 			Search Company
 		</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<script type="text/javascript"src ="js/main.js" ></script>
 	</head>
 
 	<body>
 		<h1 align="center">Sample Project</h1>
-		<form class="search_box" method="post">
+		<div class="search_box">
 				<div class="block">
 					<label for="Company_name">Company Name: </label>
 					<input type="text" id="Company_name" name="Company_name">
@@ -31,15 +30,14 @@
 					<div id="fdnameErr"></div><br><br>
 				</div>
 
-		</form>
-		<form class="submit_box" method="post" align="center" >
-		         <button type="button" onclick="validation()">Search</button>
-				<input id="clear" type="reset" value="Clear" onclick="clearup()">
-		</form>
+		</div>
+		<p class="submit_box" align="center" >
+		        <button id="btn1" type="botton";> Search </button>
+				<button id="btn2" type="botton";> Clear </button>
+		</p>
 
-	    <div>
-	    	<table></table>
-	    </div>
+	    <div id="demo"></div>
+	    <script language="JavaScript" src ="js/main.js" ></script>
 
 	</body>
 </html>
