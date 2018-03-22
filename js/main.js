@@ -1,7 +1,6 @@
 var oBtn1 = document.getElementById('btn1');
 var oBtn2 = document.getElementById('btn2');
 
-// Click the search button
 oBtn1.onclick = function() {
 	var comname = document.getElementById("Company_name").value;
 	var fdyear = document.getElementById("Founded_year").value;
@@ -11,44 +10,54 @@ oBtn1.onclick = function() {
 	var fdn = checkfdname(fdname);
 
 	if ( cn && fdy && fdn) {
-        var url = '/data/companies.json';
-        var url = '/data/companies.json';
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET',url,true);
-        xhr.onload = function() {
-        	var data = JSON.parse(xhr.responseText);
-        }
-        xhr.send();
-        alert("ok----get data");
 
         //send the input imformation
         var ourRequest = new XMLHttpRequest();
         ourRequest.onreadystatechange = function() {
         	if (ourRequest.readyState === 4 && ourRequest.status === 200){
-        		alert("ok----send");
-      
-		// ourData = getdata(url);
-		// var txt = "";
-		// txt += "<table border='1' vertical-align='middle'>";
-		// txt +="<thread ><tr bgcolor='#FF0000'><th>Logo</th><th>Company Name</th><th>Officail Website</th><th>Founded Date</th><th>Founder(s)</th><th>Discriptions</th></tr></thread>";
-		// for(i = 0; i < ourData.length; i++) {
-		// 	if (ourData[i].name === comname || ourData[i].founded_date[:4] === fdyear) {
-		// 		txt += "<tr>";
-		// 		txt += "<td><img src='" + "/images/" + ourData[i].logo + "'></img></td>";
-		// 		txt += "<td>" +  ourData[i].name + "</td>"; 
-		// 		txt += "<td><a href='" +  ourData[i].website + "'></td>";
-		// 		txt += "<td>" +  ourData[i].founded_date + "</td>"; 
-		// 		var founders = ""
-		// 		for (j = 0; j < ourData[i].founders.length; j++) {
-		// 			founders += ourData[i].founders[j].first_name + ourData[i].founders[j].last_name + ",";
-		// 		}  
-		// 		txt += "<td>" + founders + "</td>";
-		// 		txt += "<td>" +  ourData[i].descriptions + "</td>"; 
-		// 		txt += "</tr>";
-		// 	}       		
-		// }
-		// txt += "</table>" ;
-		// document.getElementById("demo").innerHTML = txt;
+        		var data = JSON.parse(ourRequest.responseText);
+        		
+        		var txt = "";
+        		// var row = 0;
+        		txt += "<hr/><br><br>";
+        		txt += "<table border='1' vertical-align='middle' width='100%''>";
+        		txt +="<tr bgcolor='#00FFFF'><th>Logo</th><th>Company Name</th><th>Officail Website</th><th>Founded Date</th><th>Founder(s)</th><th>Discriptions</th></tr>";
+        		for(i = 0; i < data.length; i++) {
+        			// row = 0;
+        			if (data[i].name === comname ) {
+        				// decide the color of this row
+        				// row += 1;      				
+        				// if（row%2 == 0）{
+        				// 	txt += "<tr bgcolor='#99ccff>";
+        				// 	}
+        				// else {
+        				// 	txt += "<tr bgcolor='#0066ff>";
+        				// }
+        				txt += "<tr >";
+        				txt += "<td width='10%'><img src='" + "/images/" + data[i].logo + "'></img></td>";
+        				txt += "<td width='8%'>" +  data[i].name + "</td>"; 
+        				txt += "<td width='12%'><a href='" +  data[i].website + "'>"+data[i].website +"</a></td>";
+        				txt += "<td width='10%'>" +  data[i].founded_date + "</td>";
+        				// alert(founded_datenew[:4]);
+        				var founders = "";
+        				for (var j = 0; j < data[i].founders.length; j++) {
+        					founders += data[i].founders[j].first_name + " " +data[i].founders[j].last_name + ",";				
+        				}
+        				txt += "<td width='10%'>" +  founders + "</td>";
+				 		txt += "<td width='50%'>" +  data[i].description + "</td>"; 
+         				txt += "</tr>";
+
+        				//alert("the same");
+        			}
+        		}
+        		txt += "</table>" ;
+        		document.getElementById("demo").innerHTML = txt;       		
+        		//alert("ok----send");
+        		
+        	}
+        }
+        ourRequest.open('GET','data/companies.json',true);
+        ourRequest.send();
 	
 	}
 	else 
@@ -57,7 +66,6 @@ oBtn1.onclick = function() {
 
 
 
-// Click clear button
 oBtn2.onclick = function() {
 	// clear the error parts
 	document.getElementById("comnameErr").innerHTML = "";
@@ -72,7 +80,7 @@ oBtn2.onclick = function() {
 
 }
 
-//Check name 
+
 function checkcomname(ssn){
 	if(ssn.length>15) {
 		document.getElementById("comnameErr").innerHTML = "<font color='red'>Please enter a valid name(1-15)</font>";
@@ -87,7 +95,7 @@ function checkcomname(ssn){
 	return true;
 }
 
-// Check founded year
+
 function checkfdyear(ssn){
 	var date=new Date;  
     var year=date.getFullYear();
@@ -99,7 +107,7 @@ function checkfdyear(ssn){
 	return true;
 }
 
-// Check founder name
+
 function checkfdname(ssn){
 	if(ssn.length>15) {
 		document.getElementById("fdnameErr").innerHTML = "<font color='red'>Please enter a valid name(1-15)</font>";
@@ -113,4 +121,12 @@ function checkfdname(ssn){
 	document.getElementById("fdnameErr").innerHTML = "";
 	return true;
 }
+
+
+
+
+
+
+
+
 

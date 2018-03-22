@@ -1,5 +1,4 @@
 body {
-	/*background: "../images/background.png";*/
 	background-size: cover; 
 	background-repeat: no-repeat;
 }
@@ -27,10 +26,6 @@ label {
 
 .submit_box {
 	position: relative;
-	top: +30px;
+	top: +20px;
 }
 
-
-
-
-/* li(list-style-image:url(../images/loge_google.png)) */
