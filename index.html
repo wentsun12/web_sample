@@ -6,36 +6,43 @@
 		<title>
 			Search Company
 		</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
-	<body background="images/background.png">
-		<h1 align="center">Sampel Project</h1>
+	<body>
+		<h1 >Sampel Project</h1>
 		<div class="search_box">
 				<div class="block">
-					<label for="Company_name">Company Name: </label>
-					<input type="text" id="Company_name" name="Company_name">
-					<div id="comnameErr"></div><br>
+					<label class="label">Company Name: </label>
+					<input type="text" id="Company_name" class="input_text" name="Company_name"><br/>
+					<label class="blank"></label>
+					<span id="comnameErr" class="err" ></span><br/>
 				</div>
 
 				<div class="block">
-					<label for="Founded_year">Founded Year: </label>
-					<input type="text" id="Founded_year" name="Founded_year">
-					<div id="fdyearErr"></div><br>
+					<label class="label">Founded Year: </label>
+					<input type="text" id="Founded_year" class="input_text" name="Founded_year"><br/>
+					<label class="blank"></label>
+					<span id="fdyearErr" class="err"></span><br/>
 
 				</div>
 			
 				<div class="block">
-					<label for="Founder_name" >Founder Name: </label>
-					<input type="text" id="Founder_name" name="Founder_name">
-					<div id="fdnameErr"></div><br>
+					<label class="label">Founder Name: </label>
+					<input type="text" id="Founder_name" class="input_text" name="Founder_name"><br/>
+					<label class="blank"></label>
+					<span id="fdnameErr" class="err"></span><br/>
 				</div>
 		</div>
 		<p class="submit_box" align="center" >
 				<button id="btn1" type="botton";> Search </button>
 				<button id="btn2" type="botton";> Clear </button>
-		</p><br><br>
+		</p>
+		<hr/>
+		<div id="tabel">
+			<table id ="result"></table>
 
-	    <div class="result" id="demo"></div>
+		</div>
+
 	    <script language="JavaScript" src ="js/main.js" ></script>
 	    
 	</body>

@@ -1,31 +1,66 @@
 body {
-	background-size: cover; 
+	background-image: url("../images/background.png");
+	background-size: 100%, 100%;
 	background-repeat: no-repeat;
 }
 
+h1 {
+	text-align:center;
+	padding-top: 10px; 
+
+}
+
 .search_box {
-	width: 800px;
-	padding: 50px;
-	background-color: #000000;
+	width: 60%;
+	padding: 40px;
+	background-color:#000000;
 	opacity: 0.2;
-	margin: 0 auto;
+	margin: auto;
+	text-align: center;
 }
 
-.block {
-	width: 400px;
-    display: block;
-    margin:0 auto;
-}
 
-label {
+label, .blank {
 	color: #ffffff;
 	display: inline-block;
     width: 150px;
 	text-align: right;
 }
+.input_text, .err {
+	display: inline-block;
+    width: 200px;
+	text-align: left;
+}
+
 
 .submit_box {
 	position: relative;
-	top: +20px;
+	top: +10px;
+}
+button {
+	width: 60px;
+
+}
+
+table {
+	margin-right: auto;
+	margin-left: auto;
+	width: 85%;
+}
+
+table.th {
+	background-color: #01A9DB;
+	text-align: center;
+}
+table,th,td {
+   border: 1px solid black;
+}
+tr:nth-child(odd) {
+	background-color: #A9A9F5;
+}
+
+#image {
+	width: 40px;
+	height: 40px;
 }
 
