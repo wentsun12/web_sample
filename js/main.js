@@ -1,6 +1,5 @@
 var oBtn1 = document.getElementById('btn1');
 var oBtn2 = document.getElementById('btn2');
-document.getElementById("result").style.visibility = "hidden";
 
 /** Click the search button
 * @return {null}
@@ -24,6 +23,11 @@ oBtn1.onclick = function() {
 
 // Print out the table tile 
 function titlerenew() {
+	// clear the error parts
+	document.getElementById("comnameErr").innerHTML = "";
+	document.getElementById("fdyearErr").innerHTML = "";
+	document.getElementById("fdnameErr").innerHTML = "";
+	// set the table visible
 	document.getElementById("result").style.visibility = 'visible';
 	document.getElementById("result").innerHTML = "";
 	var tr = document.createElement("tr");
@@ -63,7 +67,11 @@ function loaddata(url, Comname, Fdyear, Fdname) {
 function getResults(data, Com_name, Fd_year, Fd_name) {
 	var companies= new Array();
 	// search the whole file to find out results that meet conditions
-	if ( Com_name!="" && Fd_name != "" ) {
+	// list all countries if inputs are null
+	if ( Com_name=="" && Fd_name== "" && Fd_name=="") {
+		companies = data;
+	}
+	else {
 		for (var i=0; i<data.length; i++){
 			// if the company name is the same
 			var a = data[i].name.toLowerCase().match(Com_name.toLowerCase());
@@ -158,11 +166,7 @@ oBtn2.onclick = function() {
 * @return {Boolean} 
 */
 function checkcomname(ssn) {
-	// if null, report error
-	if (ssn =="") {
-		document.getElementById("comnameErr").innerHTML = "<font color='red'>Enter a valid name(1-15)</font>";
-		return false;
-	}
+
 	// Check if the name lenght is longer than 15 or not
 	if(ssn.length>15) {
 		document.getElementById("comnameErr").innerHTML = "<font color='red'>Enter a valid name(1-15)</font>";
@@ -185,6 +189,9 @@ function checkcomname(ssn) {
 function checkfdyear(ssn) {
 	var date=new Date;  
     var year=date.getFullYear();
+    if(ssn== "") {
+    	return true;
+    }
     // if input year is number and between 1970 and now 
 	if( isNaN(ssn) || ssn > year || ssn < 1970 ) {
 		document.getElementById("fdyearErr").innerHTML = "<font color='red'>Enter a valid year(1970-now)</font>";
@@ -199,11 +206,7 @@ function checkfdyear(ssn) {
 * @return {Boolean} 
 */
 function checkfdname(ssn) {
-	// if null, report error
-	if (ssn =="") {
-		document.getElementById("fdnameErr").innerHTML = "<font color='red'>Enter a name(1-15)</font>";
-		return false;
-	}
+
 	// Check if the name lenght is longer than 15 or not
 	if(ssn.length>15) {
 		document.getElementById("fdnameErr").innerHTML = "<font color='red'>Enter a name(1-15)</font>";
