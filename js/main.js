@@ -114,7 +114,7 @@ function printresult(comarray) {
 		var td6 = document.createElement("td");
 
 		// insert the context into elments
-		td1.innerHTML = "<img id='image' src='" + "images/" + coms[i].logo + "'></img>";
+		td1.innerHTML = "<a href='" +  coms[i].website +"'><img id='image' src='" + "images/" + coms[i].logo + "'></a>";
 		td2.innerHTML = coms[i].name;
 		td3.innerHTML = "<a href='" +  coms[i].website + "' target='_blank'>"+ coms[i].website +"</a>";
 		td4.innerHTML = coms[i].founded_date.substring(0,4)+"."+coms[i].founded_date.substring(4,6)+"."+coms[i].founded_date.substring(6,8);
